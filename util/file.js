@@ -9,12 +9,12 @@ function FileHandler(){
         child.forEach(file => {
             var filePath = dirName + '/' + file
             if(fs.statSync(filePath).isDirectory()){
-                this.listDirectory(filePath).forEach(f=>{
+                this.listAllFiles(filePath).forEach(f=>{
                     files.push(f)
                 })
             }
             else{
-                
+
                 childFiles.push(filePath)
             }
         })
@@ -49,6 +49,19 @@ function FileHandler(){
         })
 
         return files
+    }
+
+    this.read = fileName => {
+        return fs.readFileSync('./config/config.json')
+    }
+
+    this. write = (fileName, value, append = true) => {
+        fs.openSync(fileName)
+        if(append){
+            value = read(fileName) + "\r\n" + value;
+        }
+        fs.writeFileSync(fileName, value);
+        fs.close()
     }
 }
 

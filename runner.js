@@ -1,16 +1,13 @@
 require("./wxapi/wx")
 require("./wxapi/config")
-
-console.log("loading...")
+config = { }
 
 console.log("********************************************")
 console.log("***** This is a driver for Weixin App  *****")
 console.log("********************************************")
+main()
 
-var FileHandler = require('./util/file.js')
-var handler = new FileHandler()
-var child = handler.listDirectory('c:\\test')
+function main() {
+    
+}
 
-child.forEach(element => {
-    console.log(element)
-});

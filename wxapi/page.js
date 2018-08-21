@@ -1,9 +1,9 @@
-Page = {
-    onPullDownRefresh : function(){
+Page = OBJECT => {
+    onPullDownRefresh = function(){
 
-    },
+    }
 
-    onShareAppMessage : function(OBJECT){
+    onShareAppMessage = function(OBJECT){
 
-    },
+    }
 }
